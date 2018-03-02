@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping package="restful.persistence" schema="restful">  
+	 <class name="restful.persistence.User" table="users">
+		 <id name="id" type="java.lang.Long">
+		  <column default="1" name="id" not-null="true"
+		    sql-type="NUMBER" unique="true"/>
+		    <generator class="increment"/>
+		 </id>
+		 <property generated="never" lazy="false" name="uuid" type="java.lang.String">
+		 	<column name="uuid"/>
+		 </property>
+		 <property generated="never" lazy="false" name="username" type="java.lang.String">
+		 	<column name="username"/>
+		 </property>
+		  <property generated="never" lazy="false" name="password" type="java.lang.String">
+		 	<column name="password"/>
+		 </property>
+		 <property generated="never" lazy="false" name="email" type="java.lang.String">
+		 	<column name="email"/>
+		 </property>
+		 <property generated="never" lazy="false" name="createdOn" type="java.util.Date">
+		 	<column name="createdOn"/>
+		 </property>
+		 <property generated="never" lazy="false" name="updatedOn" type="java.util.Date">
+		 	<column name="updatedOn"/>
+		 </property>
+		 <property generated="never" lazy="false" name="createdBy" type="java.lang.Long">
+		 	<column name="createdby"/>
+		 </property>
+		 <property generated="never" lazy="false" name="updatedBy" type="java.lang.Long">
+		 	<column name="updatedby"/>
+		 </property>
+	 </class>
+ </hibernate-mapping>
